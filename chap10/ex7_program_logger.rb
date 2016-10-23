@@ -7,14 +7,16 @@
 
 def program_logger block_description
   puts "Beginning \""+block_description+"\"..."
-  puts "Beginning \""+block_description+"\"..."
-   yield
-  puts "\""+block_description.to_s+"\" finished, returning: #{yield}"
+   answer = yield
+  puts "...\""+block_description.to_s+"\" finished, returning: #{answer}"
 end
 
 program_logger 'outer block' do
-    puts 5
   program_logger 'some little block' do
-    puts "I love Cambodian food."
+    5
   end
+  program_logger 'yet another block' do
+    "I love Cambodian food."
+  end
+    false
 end
