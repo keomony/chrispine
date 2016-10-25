@@ -7,8 +7,8 @@
 
 def program_logger block_description
   puts "Beginning \""+block_description+"\"..."
-   answer = yield
-  puts "...\""+block_description.to_s+"\" finished, returning: #{answer}"
+   return_value = yield
+  puts "...\""+block_description.to_s+"\" finished, returning: #{return_value}"
 end
 
 program_logger 'outer block' do
